@@ -18,9 +18,9 @@ let b:did_C_ftplugin = 1
 "
 " ---------- system installation or local installation ----------
 "
-let s:installation				= 'local'
+let s:installation        = 'local'
 if match( expand("<sfile>"), escape( $VIM, ' \' ) ) == 0
-	let s:installation						= 'system'
+  let s:installation            = 'system'
 endif
 "
 " ---------- Do we have a mapleader other than '\' ? ------------
@@ -342,8 +342,8 @@ inoremap    <buffer>  <silent>  <LocalLeader>ns    <Esc>:call C_ProtoShow()<CR>
  noremap    <buffer>  <silent>  <LocalLeader>ntl        :call C_BrowseTemplateFiles("Local")<CR>
 inoremap    <buffer>  <silent>  <LocalLeader>ntl   <Esc>:call C_BrowseTemplateFiles("Local")<CR>
  if s:installation == 'system'
-	 noremap    <buffer>  <silent>  <LocalLeader>ntg        :call C_BrowseTemplateFiles("Global")<CR>
-	inoremap    <buffer>  <silent>  <LocalLeader>ntg   <Esc>:call C_BrowseTemplateFiles("Global")<CR>
+   noremap    <buffer>  <silent>  <LocalLeader>ntg        :call C_BrowseTemplateFiles("Global")<CR>
+  inoremap    <buffer>  <silent>  <LocalLeader>ntg   <Esc>:call C_BrowseTemplateFiles("Global")<CR>
  endif
  noremap    <buffer>  <silent>  <LocalLeader>ntr        :call C_RereadTemplates()<CR>
  noremap    <buffer>            <LocalLeader>nts        :CStyle<Space>
@@ -480,8 +480,8 @@ inoremap  <buffer>  {<CR>    {<CR>}<Esc>O
 vnoremap  <buffer>  {<CR>   S{<CR>}<Esc>Pk=iB
 "
 "
-if !exists("g:C_Ctrl_j") || ( exists("g:C_Ctrl_j") && g:C_Ctrl_j != 'off' )
-  nmap    <buffer>  <silent>  <C-j>   i<C-R>=C_JumpCtrlJ()<CR>
-  imap    <buffer>  <silent>  <C-j>    <C-R>=C_JumpCtrlJ()<CR>
-endif
+" if !exists("g:C_Ctrl_j") || ( exists("g:C_Ctrl_j") && g:C_Ctrl_j != 'off' )
+"   nmap    <buffer>  <silent>  <C-j>   i<C-R>=C_JumpCtrlJ()<CR>
+"   imap    <buffer>  <silent>  <C-j>    <C-R>=C_JumpCtrlJ()<CR>
+" endif
 "
